@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdint.h>
+#include <stdio.h>
 #include <string.h>
 #include "libft.h"
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-		printf(" \ns = %s", argv[1]);
+		printf(" \ns = %s\n", argv[1]);
 		printf(" p = ft_substr(%s, %s, %s)\n", argv[1], argv[2], argv[3]);
 		p = ft_substr(argv[1], atoi(argv[2]), atoi(argv[3]));
 		printf(" p = %s\n", p);
