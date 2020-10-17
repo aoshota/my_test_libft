@@ -11,39 +11,39 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-#include "libft.h"
 
 int	main(int argc, char **argv)
 {
-	char	*p;
 
-	if (argc < 4)
+	if (argc < 2)
 	{
-		printf("\n --- input like this ---\n");
-		printf(" --- ./a.out \"*****\" \"hello\" \"3\"      ---\n\n");
+		printf("\n --- input number like this ---\n");
+		printf(" --- ./a.out \"0\"       ---\n\n");
+		printf(" --- 0: dst = NULL, src = normal ---\n");
+		printf(" --- 1: dst = normal, src = NULL ---\n");
+		printf(" --- 2: dst = NULL, src = NULL ---\n\n");
 	}
 	else
 	{
-		char	*dst;
-		char	*src;
-
-		dst = strdup(argv[1]);
-		src = strdup(argv[2]);
-
-		printf("\n dst = %s\n", dst);
-		printf(" src = %s\n", src);
-		printf(" ft_memcpy(dst, src, atoi(argv[3]))\n");
-		memcpy(dst, src, atoi(argv[3]));
-		printf(" dst = %s\n", dst);
-		printf(" src = %s\n\n", src);
-
-		printf("\n argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n", argv[2]);
-		printf(" ft_memcpy(argv[1], argv[2], atoi(argv[3]))\n");
-		ft_memcpy(argv[1], argv[2], atoi(argv[3]));
-		printf(" argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n\n", argv[2]);
+		int 	flag = atoi(argv[1]);
+		char	*p = "test";
+		if (flag == 0)
+		{
+			printf(" memcpy(NULL, p, 5)\n");
+			memcpy(NULL, p, 5);
+		}
+		else if (flag == 1)
+		{
+			printf(" memcpy(p, NULL, 5)\n");
+			memcpy(p, NULL, 5);
+		}
+		else if (flag == 2)
+		{
+			printf(" memcpy(NULL, NULL, 5)\n");
+			memcpy(NULL, NULL, 5);
+		}
 	}
 
 	return(0);

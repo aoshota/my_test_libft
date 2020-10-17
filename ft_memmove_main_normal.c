@@ -33,15 +33,15 @@ int	main(int argc, char **argv)
 
 		printf("\n dst = %s\n", dst);
 		printf(" src = %s\n", src);
-		printf(" ft_memcpy(dst, src, atoi(argv[3]))\n");
-		memcpy(dst, src, atoi(argv[3]));
+		printf(" ft_memmove(dst, src, atoi(argv[3]))\n");
+		memmove(dst, src, atoi(argv[3]));
 		printf(" dst = %s\n", dst);
 		printf(" src = %s\n\n", src);
 
 		printf("\n argv[1] = %s\n", argv[1]);
 		printf(" argv[2] = %s\n", argv[2]);
-		printf(" ft_memcpy(argv[1], argv[2], atoi(argv[3]))\n");
-		ft_memcpy(argv[1], argv[2], atoi(argv[3]));
+		printf(" ft_memmove(argv[1], argv[2], atoi(argv[3]))\n");
+		ft_memmove(argv[1], argv[2], atoi(argv[3]));
 		printf(" argv[1] = %s\n", argv[1]);
 		printf(" argv[2] = %s\n\n", argv[2]);
 	}

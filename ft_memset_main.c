@@ -16,12 +16,10 @@
 
 int	main(int argc, char **argv)
 {
-	char	*p;
-
-	if (argc < 4)
+	if (argc < 3)
 	{
 		printf("\n --- input like this ---\n");
-		printf(" --- ./a.out \"*****\" \"hello\" \"3\"      ---\n\n");
+		printf(" --- ./a.out \"hello\" \"*\" \"3\"      ---\n\n");
 	}
 	else
 	{
@@ -30,21 +28,17 @@ int	main(int argc, char **argv)
 
 		dst = strdup(argv[1]);
 		src = strdup(argv[2]);
-
 		printf("\n dst = %s\n", dst);
-		printf(" src = %s\n", src);
-		printf(" ft_memcpy(dst, src, atoi(argv[3]))\n");
-		memcpy(dst, src, atoi(argv[3]));
-		printf(" dst = %s\n", dst);
-		printf(" src = %s\n\n", src);
+		printf(" dst = %p\n", dst);
+		printf(" memset(dst, *src, atoi(argv[3]))\n");
+		memset(dst, *src, atoi(argv[3]));
+		printf(" dst = %s\n\n", dst);
 
-		printf("\n argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n", argv[2]);
-		printf(" ft_memcpy(argv[1], argv[2], atoi(argv[3]))\n");
-		ft_memcpy(argv[1], argv[2], atoi(argv[3]));
 		printf(" argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n\n", argv[2]);
+		printf(" argv[1] = %p\n", argv[1]);
+		printf(" ft_memset(argv[1], *argv[2], atoi(argv[3]))\n");
+		ft_memset(argv[1], *argv[2], atoi(argv[3]));
+		printf(" argv[1] = %s\n\n", argv[1]);
 	}
-
 	return(0);
 }

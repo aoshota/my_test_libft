@@ -16,35 +16,41 @@
 
 int	main(int argc, char **argv)
 {
-	char	*p;
-
-	if (argc < 4)
+	if (argc < 3)
 	{
 		printf("\n --- input like this ---\n");
-		printf(" --- ./a.out \"*****\" \"hello\" \"3\"      ---\n\n");
+		printf(" --- ./a.out \"hello\" \"3\"      ---\n\n");
 	}
 	else
 	{
 		char	*dst;
-		char	*src;
 
 		dst = strdup(argv[1]);
-		src = strdup(argv[2]);
 
 		printf("\n dst = %s\n", dst);
-		printf(" src = %s\n", src);
-		printf(" ft_memcpy(dst, src, atoi(argv[3]))\n");
-		memcpy(dst, src, atoi(argv[3]));
-		printf(" dst = %s\n", dst);
-		printf(" src = %s\n\n", src);
+		int len = strlen(argv[1]);
+		printf(" bzero(dst, atoi(argv[2]))\n");
+		bzero(dst, atoi(argv[2]));
+		int	i = 0;
+		printf(" dst = ");
+		while (i < len)
+		{
+			printf("%c", dst[i]);
+			i++;
+		}
+		printf("\n");
 
 		printf("\n argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n", argv[2]);
-		printf(" ft_memcpy(argv[1], argv[2], atoi(argv[3]))\n");
-		ft_memcpy(argv[1], argv[2], atoi(argv[3]));
-		printf(" argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n\n", argv[2]);
+		printf(" ft_bzero(argv[1], atoi(argv[2]))\n");
+		ft_bzero(argv[1], atoi(argv[2]));
+		printf(" argv[1] = ");
+		i = 0;
+		while (i < len)
+		{
+			printf("%c", argv[1][i]);
+			i++;
+		}
+		printf("\n\n");
 	}
-
 	return(0);
 }

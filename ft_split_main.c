@@ -16,35 +16,21 @@
 
 int	main(int argc, char **argv)
 {
-	char	*p;
-
-	if (argc < 4)
+	if (argc < 2)
 	{
 		printf("\n --- input like this ---\n");
-		printf(" --- ./a.out \"*****\" \"hello\" \"3\"      ---\n\n");
+		printf(" --- ./a.out \"+apple+++banana+pine\" \"+\"      ---\n\n");
 	}
 	else
 	{
-		char	*dst;
-		char	*src;
+		char	**p;
 
-		dst = strdup(argv[1]);
-		src = strdup(argv[2]);
-
-		printf("\n dst = %s\n", dst);
-		printf(" src = %s\n", src);
-		printf(" ft_memcpy(dst, src, atoi(argv[3]))\n");
-		memcpy(dst, src, atoi(argv[3]));
-		printf(" dst = %s\n", dst);
-		printf(" src = %s\n\n", src);
-
-		printf("\n argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n", argv[2]);
-		printf(" ft_memcpy(argv[1], argv[2], atoi(argv[3]))\n");
-		ft_memcpy(argv[1], argv[2], atoi(argv[3]));
-		printf(" argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n\n", argv[2]);
+		p = ft_split(argv[1], *argv[2]);
+		while (*p)
+		{
+			printf("%s\n", *p);
+			p++;
+		}
 	}
-
 	return(0);
 }

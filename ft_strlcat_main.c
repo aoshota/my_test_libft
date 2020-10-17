@@ -16,35 +16,37 @@
 
 int	main(int argc, char **argv)
 {
-	char	*p;
-
 	if (argc < 4)
 	{
 		printf("\n --- input like this ---\n");
-		printf(" --- ./a.out \"*****\" \"hello\" \"3\"      ---\n\n");
+		printf(" --- ./a.out \"hello\" \"world\" \"10\"      ---\n\n");
 	}
 	else
 	{
-		char	*dst;
-		char	*src;
-
-		dst = strdup(argv[1]);
-		src = strdup(argv[2]);
+		char *dst = strdup(argv[1]);
+		char *src = strdup(argv[2]);
+		char *mydst = strdup(argv[1]);
+		char *mysrc = strdup(argv[2]);
+		size_t len;
+		size_t mylen;
 
 		printf("\n dst = %s\n", dst);
 		printf(" src = %s\n", src);
-		printf(" ft_memcpy(dst, src, atoi(argv[3]))\n");
-		memcpy(dst, src, atoi(argv[3]));
+		printf(" dstsize = %d\n", atoi(argv[3]));
+		printf(" len = strlcat(dst, src, atoi(argv[3]))\n");
+		len = strlcat(dst, src, atoi(argv[3]));
 		printf(" dst = %s\n", dst);
-		printf(" src = %s\n\n", src);
+		printf(" src = %s\n", src);
+		printf(" len = %ld\n\n", len);
 
-		printf("\n argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n", argv[2]);
-		printf(" ft_memcpy(argv[1], argv[2], atoi(argv[3]))\n");
-		ft_memcpy(argv[1], argv[2], atoi(argv[3]));
-		printf(" argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n\n", argv[2]);
+		printf(" mydst = %s\n", mydst);
+		printf(" mysrc = %s\n", mysrc);
+		printf(" dstsize = %d\n", atoi(argv[3]));
+		printf(" mylen = ft_strlcat(mydst, mysrc, atoi(argv[3]))\n");
+		mylen = ft_strlcat(mydst, mysrc, atoi(argv[3]));
+		printf(" mydst = %s\n", mydst);
+		printf(" mysrc = %s\n", mysrc);
+		printf(" len = %ld\n\n", mylen);
 	}
-
 	return(0);
 }

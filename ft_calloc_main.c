@@ -14,37 +14,45 @@
 #include <string.h>
 #include "libft.h"
 
-int	main(int argc, char **argv)
+int	main(void)
 {
 	char	*p;
+	char	*c;
+	char	*myc;
+	int 	i;
 
-	if (argc < 4)
+	p = malloc(5 * sizeof(char));
+
+	i = 0;
+	printf("\n p = malloc(5 * sizeof(char))\n");
+	while (i < 5)
 	{
-		printf("\n --- input like this ---\n");
-		printf(" --- ./a.out \"*****\" \"hello\" \"3\"      ---\n\n");
+		printf(" p[%d] = %c\n", i, p[i]);
+		i++;
 	}
-	else
+	printf("\n");
+
+	c = calloc(5, sizeof(char));
+
+	i = 0;
+	printf("\n c = calloc(5, sizeof(char))\n");
+	while (i < 5)
 	{
-		char	*dst;
-		char	*src;
-
-		dst = strdup(argv[1]);
-		src = strdup(argv[2]);
-
-		printf("\n dst = %s\n", dst);
-		printf(" src = %s\n", src);
-		printf(" ft_memcpy(dst, src, atoi(argv[3]))\n");
-		memcpy(dst, src, atoi(argv[3]));
-		printf(" dst = %s\n", dst);
-		printf(" src = %s\n\n", src);
-
-		printf("\n argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n", argv[2]);
-		printf(" ft_memcpy(argv[1], argv[2], atoi(argv[3]))\n");
-		ft_memcpy(argv[1], argv[2], atoi(argv[3]));
-		printf(" argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n\n", argv[2]);
+		printf(" c[%d] = %c\n", i, c[i]);
+		i++;
 	}
+	printf("\n");
+
+	myc = ft_calloc(5, sizeof(char));
+
+	i = 0;
+	printf("\n myc = ft_calloc(5, sizeof(char))\n");
+	while (i < 5)
+	{
+		printf(" myc[%d] = %c\n", i, myc[i]);
+		i++;
+	}
+	printf("\n");
 
 	return(0);
 }

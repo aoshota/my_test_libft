@@ -16,35 +16,26 @@
 
 int	main(int argc, char **argv)
 {
-	char	*p;
-
 	if (argc < 4)
 	{
 		printf("\n --- input like this ---\n");
-		printf(" --- ./a.out \"*****\" \"hello\" \"3\"      ---\n\n");
+		printf(" --- ./a.out \"apple\" \"applz\" \"6\"     ---\n\n");
 	}
 	else
 	{
-		char	*dst;
-		char	*src;
+		printf("\n str1 = %s\n", argv[1]);
+		printf(" str2 = %s\n", argv[2]);
+		printf(" n = %d\n\n", atoi(argv[3]));
 
-		dst = strdup(argv[1]);
-		src = strdup(argv[2]);
+		int	a;
+		int b;
 
-		printf("\n dst = %s\n", dst);
-		printf(" src = %s\n", src);
-		printf(" ft_memcpy(dst, src, atoi(argv[3]))\n");
-		memcpy(dst, src, atoi(argv[3]));
-		printf(" dst = %s\n", dst);
-		printf(" src = %s\n\n", src);
-
-		printf("\n argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n", argv[2]);
-		printf(" ft_memcpy(argv[1], argv[2], atoi(argv[3]))\n");
-		ft_memcpy(argv[1], argv[2], atoi(argv[3]));
-		printf(" argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n\n", argv[2]);
+		printf(" a = memcmp(argv[1], argv[2], atoi(argv[3]))\n");
+		printf(" b = ft_memcmp(argv[1], argv[2], atoi(argv[3]))\n");
+		a = memcmp(argv[1], argv[2], atoi(argv[3]));
+		b = ft_memcmp(argv[1], argv[2], atoi(argv[3]));
+		printf(" a = %d\n", a);
+		printf(" b = %d\n\n", b);
 	}
-
 	return(0);
 }

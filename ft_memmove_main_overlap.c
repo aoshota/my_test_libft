@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	if (argc < 4)
 	{
 		printf("\n --- input like this ---\n");
-		printf(" --- ./a.out \"*****\" \"hello\" \"3\"      ---\n\n");
+		printf(" --- ./a.out \"don't use\" \"abcdefghijklmn\" \"5\"      ---\n\n");
 	}
 	else
 	{
@@ -31,18 +31,18 @@ int	main(int argc, char **argv)
 		dst = strdup(argv[1]);
 		src = strdup(argv[2]);
 
-		printf("\n dst = %s\n", dst);
+		printf("\n dst = src+3 = %s\n", src+3);
 		printf(" src = %s\n", src);
-		printf(" ft_memcpy(dst, src, atoi(argv[3]))\n");
-		memcpy(dst, src, atoi(argv[3]));
-		printf(" dst = %s\n", dst);
+		printf(" ft_memmove(src+3, src, atoi(argv[3]))\n");
+		memmove(src+3, src, atoi(argv[3]));
+		printf(" dst = src+3 = %s\n", src+3);
 		printf(" src = %s\n\n", src);
 
-		printf("\n argv[1] = %s\n", argv[1]);
+		printf("\n argv[2] + 3 = %s\n", argv[2] + 3);
 		printf(" argv[2] = %s\n", argv[2]);
-		printf(" ft_memcpy(argv[1], argv[2], atoi(argv[3]))\n");
-		ft_memcpy(argv[1], argv[2], atoi(argv[3]));
-		printf(" argv[1] = %s\n", argv[1]);
+		printf(" ft_memmove(argv[2]+3, argv[2], atoi(argv[3]))\n");
+		ft_memmove(argv[2]+3, argv[2], atoi(argv[3]));
+		printf(" argv[2] + 3 = %s\n", argv[2] + 3);
 		printf(" argv[2] = %s\n\n", argv[2]);
 	}
 

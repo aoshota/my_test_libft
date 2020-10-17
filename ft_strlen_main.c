@@ -16,35 +16,26 @@
 
 int	main(int argc, char **argv)
 {
-	char	*p;
-
-	if (argc < 4)
+	if (argc < 2)
 	{
 		printf("\n --- input like this ---\n");
-		printf(" --- ./a.out \"*****\" \"hello\" \"3\"      ---\n\n");
+		printf(" --- ./a.out \"word\"       ---\n\n");
 	}
 	else
 	{
-		char	*dst;
-		char	*src;
+		size_t a;
+		size_t b;
 
-		dst = strdup(argv[1]);
-		src = strdup(argv[2]);
+		printf("\n s = %s\n\n", argv[1]);
 
-		printf("\n dst = %s\n", dst);
-		printf(" src = %s\n", src);
-		printf(" ft_memcpy(dst, src, atoi(argv[3]))\n");
-		memcpy(dst, src, atoi(argv[3]));
-		printf(" dst = %s\n", dst);
-		printf(" src = %s\n\n", src);
+		a = strlen(argv[1]);
+		b = ft_strlen(argv[1]);
 
-		printf("\n argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n", argv[2]);
-		printf(" ft_memcpy(argv[1], argv[2], atoi(argv[3]))\n");
-		ft_memcpy(argv[1], argv[2], atoi(argv[3]));
-		printf(" argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n\n", argv[2]);
+		printf(" a = strlen(s)\n");
+		printf(" b = ft_strlen(s)\n");
+
+		printf(" a = %ld\n", a);
+		printf(" b = %ld\n\n", b);
 	}
-
 	return(0);
 }

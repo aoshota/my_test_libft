@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy_main.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saoyama <saoyama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/15 13:01:44 by saoyama           #+#    #+#             */
-/*   Updated: 2020/10/15 13:01:44 by saoyama          ###   ########.fr       */
+/*   Created: 2020/10/14 19:35:37 by saoyama           #+#    #+#             */
+/*   Updated: 2020/10/14 19:35:37 by saoyama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <ctype.h>
 #include <string.h>
 #include "libft.h"
 
@@ -23,7 +24,8 @@ int	main(int argc, char **argv)
 	}
 	else
 	{
-
+		printf("\n isaplha(%s) = %d\n", argv[1], isalpha(argv[1][0]));
+		printf(" ft_isalpha(%s) = %d\n\n", argv[1], ft_isalpha(argv[1][0]));
 	}
-	return(0);
+	return (0);
 }

@@ -16,35 +16,29 @@
 
 int	main(int argc, char **argv)
 {
-	char	*p;
-
-	if (argc < 4)
+	if (argc < 2)
 	{
 		printf("\n --- input like this ---\n");
-		printf(" --- ./a.out \"*****\" \"hello\" \"3\"      ---\n\n");
+		printf(" --- ./a.out \"word\"       ---\n\n");
 	}
 	else
 	{
-		char	*dst;
-		char	*src;
+		char	*p;
+		char	*myp;
 
-		dst = strdup(argv[1]);
-		src = strdup(argv[2]);
+		printf("\n s1 = %s\n", argv[1]);
+		printf(" s1 = %p\n\n", argv[1]);
 
-		printf("\n dst = %s\n", dst);
-		printf(" src = %s\n", src);
-		printf(" ft_memcpy(dst, src, atoi(argv[3]))\n");
-		memcpy(dst, src, atoi(argv[3]));
-		printf(" dst = %s\n", dst);
-		printf(" src = %s\n\n", src);
+		p = strdup(argv[1]);
+		printf(" p = strdup(s1)\n");
+		printf(" p = %s\n", p);
+		printf(" p = %p\n\n", p);
 
-		printf("\n argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n", argv[2]);
-		printf(" ft_memcpy(argv[1], argv[2], atoi(argv[3]))\n");
-		ft_memcpy(argv[1], argv[2], atoi(argv[3]));
-		printf(" argv[1] = %s\n", argv[1]);
-		printf(" argv[2] = %s\n\n", argv[2]);
+
+		myp = ft_strdup(argv[1]);
+		printf(" myp = ft_strdup(s1)\n");
+		printf(" myp = %s\n", myp);
+		printf(" myp = %p\n\n", myp);
 	}
-
 	return(0);
 }
