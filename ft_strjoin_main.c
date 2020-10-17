@@ -19,22 +19,17 @@ int	main(int argc, char **argv)
 	if (argc < 3)
 	{
 		printf("\n --- input like this ---\n");
-		printf(" --- ./a.out \"++hello+world+++from+42++tokyo\" \"+\"      ---\n\n");
+		printf(" --- ./a.out \"hello\" \" world!\"      ---\n\n");
 	}
 	else
 	{
-		char	**p;
+		char	*p;
 
-		printf("\n s = %s\n", argv[1]);
-		printf(" c = %c\n", argv[2][0]);
+		printf("\n s1 = %s\n", argv[1]);
+		printf(" s2 = %s\n", argv[2]);
 
-		p = ft_split(argv[1], argv[2][0]);
-		int	i = 0;
-		while (p[i])
-		{
-			printf("\n p = %s\n\n", p[i]);
-			i++;
-		}
+		p = ft_strjoin(argv[1], argv[2]);
+		printf("\n p = %s\n\n", p);
 	}
 	return(0);
 }

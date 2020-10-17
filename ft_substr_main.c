@@ -16,19 +16,22 @@
 
 int	main(int argc, char **argv)
 {
-	char *p;
-
 	if (argc < 4)
 	{
 		printf("\n --- input like this ---\n");
-		printf(" --- ./a.out \"Hello world!\" \"7\" \"5\" ---\n\n");
+		printf(" --- ./a.out \"hello world!\" \"3\" \"5\"      ---\n\n");
 	}
 	else
 	{
+		char	*p;
+
 		printf("\n s = %s\n", argv[1]);
-		printf(" p = ft_substr(%s, %s, %s)\n", argv[1], argv[2], argv[3]);
+		printf(" start = %d\n", atoi(argv[2]));
+		printf(" len = %d\n", atoi(argv[3]));
+
+		printf("\n p = ft_substr(argv[1], atoi(argv[2]), atoi(argv[3]))\n");
 		p = ft_substr(argv[1], atoi(argv[2]), atoi(argv[3]));
-		printf(" p = %s\n", p);
+		printf(" p = %s\n\n", p);
 	}
 	return(0);
 }

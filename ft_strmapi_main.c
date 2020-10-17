@@ -14,27 +14,30 @@
 #include <string.h>
 #include "libft.h"
 
+char	my_topper(unsigned int index, char c)
+{
+	(void)index;
+
+	if (c >= 'a' && c <= 'z')
+		return (c - ('a' - 'A'));
+	return (c);
+}
+
 int	main(int argc, char **argv)
 {
-	if (argc < 3)
+	if (argc < 2)
 	{
 		printf("\n --- input like this ---\n");
-		printf(" --- ./a.out \"++hello+world+++from+42++tokyo\" \"+\"      ---\n\n");
+		printf(" --- ./a.out \"word\"       ---\n\n");
 	}
 	else
 	{
-		char	**p;
+		char	(*p)(unsigned int, char) = my_topper;
+		char	*ans;
 
-		printf("\n s = %s\n", argv[1]);
-		printf(" c = %c\n", argv[2][0]);
-
-		p = ft_split(argv[1], argv[2][0]);
-		int	i = 0;
-		while (p[i])
-		{
-			printf("\n p = %s\n\n", p[i]);
-			i++;
-		}
+		printf("\n argv[1] = %s\n", argv[1]);
+		ans = ft_strmapi(argv[1], p);
+		printf(" p = %s\n\n", ans);
 	}
 	return(0);
 }

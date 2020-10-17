@@ -18,12 +18,15 @@ int	main(int argc, char **argv)
 {
 	if (argc < 2)
 	{
-		printf("\n --- input number like this ---\n");
+		printf("\n --- input like this ---\n");
 		printf(" --- ./a.out \"number\"       ---\n\n");
 	}
 	else
 	{
-		printf("\n %s\n\n", ft_itoa(atoi(argv[1])));
+		char	*p;
+
+		p = ft_itoa(atoi(argv[1]));
+		printf("\n p = %s\n\n", p);
 	}
 	return(0);
 }

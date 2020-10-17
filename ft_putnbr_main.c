@@ -16,25 +16,16 @@
 
 int	main(int argc, char **argv)
 {
-	if (argc < 3)
+	if (argc < 2)
 	{
 		printf("\n --- input like this ---\n");
-		printf(" --- ./a.out \"++hello+world+++from+42++tokyo\" \"+\"      ---\n\n");
+		printf(" --- ./a.out \"c\" \"fd\"      ---\n\n");
 	}
 	else
 	{
-		char	**p;
-
-		printf("\n s = %s\n", argv[1]);
-		printf(" c = %c\n", argv[2][0]);
-
-		p = ft_split(argv[1], argv[2][0]);
-		int	i = 0;
-		while (p[i])
-		{
-			printf("\n p = %s\n\n", p[i]);
-			i++;
-		}
+		if (atoi(argv[2]) != 1 & atoi(argv[2]) != 2)
+			return (0);
+		ft_putnbr_fd(atoi(argv[1]), atoi(argv[2]));
 	}
 	return(0);
 }
