@@ -20,6 +20,17 @@ int	main(int argc, char **argv)
 	{
 		printf("\n --- input like this ---\n");
 		printf(" --- ./a.out \"apple\" \"l\"      ---\n\n");
+
+		char	*s;
+		char	c = 'a';
+		char	*p;
+		char	*myp;
+
+		s = NULL;
+		printf("\n p = strchr(s, c)\n");
+		p = strchr(s, c);
+		printf("\n myp = ft_strchr(s, c)\n");
+		myp = ft_strchr(s, c);
 	}
 	else
 	{
