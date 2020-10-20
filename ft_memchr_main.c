@@ -20,6 +20,18 @@ int	main(int argc, char **argv)
 	{
 		printf("\n --- input like this ---\n");
 		printf(" --- ./a.out \"abcdefg\" \"d\" \"5\"      ---\n\n");
+
+		char	*p;
+		char	*myp;
+		char	*s;
+		char	c = 'a';
+		size_t	n = 20;
+
+		s = NULL;
+		printf("\n p = memchr(s, c, n)\n");
+		p = memchr(s, c, n);
+		printf("\n myp = ft_memchr(s, c, n)\n");
+		myp = ft_memchr(s, c, n);
 	}
 	else
 	{
