@@ -21,14 +21,14 @@ int	main(int argc, char **argv)
 		printf("\n --- input like this ---\n");
 		printf(" --- ./a.out \"apple*pine*banana\" \"pine\" \"20\"     ---\n\n");
 
-		// char	*haystack = "test\0apple";
-		char	*haystack;
-		char	*needle = "test";
+		char	*haystack = "test\0apple";
+		// char	*haystack;
+		char	*needle = "";
 		// char	*needle;
 		size_t	len = 20;
 
 		// needle = NULL;
-		haystack = NULL;
+		// haystack = NULL;
 
 		printf("\n strnstr(haystack, needle, len) = %p\n", strnstr(haystack, needle, len));
 		printf(" strnstr(haystack, needle, len) = %s\n", strnstr(haystack, needle,len));
