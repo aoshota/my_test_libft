@@ -6,7 +6,7 @@
 /*   By: saoyama <saoyama@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 13:01:44 by saoyama           #+#    #+#             */
-/*   Updated: 2020/10/15 13:01:44 by saoyama          ###   ########.fr       */
+/*   Updated: 2020/10/20 20:31:00 by saoyama          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,19 @@ int	main(int argc, char **argv)
 		printf("\n --- input like this ---\n");
 		printf(" --- ./a.out \"apple*pine*banana\" \"pine\" \"20\"     ---\n\n");
 
-		char	*haystack = "test\0apple";
+//		char	*haystack = "test\0apple";
 		// char	*haystack;
-		char	*needle = "";
+//		char	*needle = "";
 		// char	*needle;
-		size_t	len = 20;
+//		size_t	len = 20;
 
 		// needle = NULL;
 		// haystack = NULL;
 
-		printf("\n strnstr(haystack, needle, len) = %p\n", strnstr(haystack, needle, len));
-		printf(" strnstr(haystack, needle, len) = %s\n", strnstr(haystack, needle,len));
-		printf(" ft_strnstr(haystack, needle, len) = %p\n", ft_strnstr(haystack, needle,len));
-		printf(" ft_strnstr(haystack, needle, len) = %s\n\n", ft_strnstr(haystack, needle,len));
+//		printf("\n strnstr(haystack, needle, len) = %p\n", strnstr(haystack, needle, len));
+//		printf(" strnstr(haystack, needle, len) = %s\n", strnstr(haystack, needle,len));
+//		printf(" ft_strnstr(haystack, needle, len) = %p\n", ft_strnstr(haystack, needle,len));
+//		printf(" ft_strnstr(haystack, needle, len) = %s\n\n", ft_strnstr(haystack, needle,len));
 	}
 	else
 	{
